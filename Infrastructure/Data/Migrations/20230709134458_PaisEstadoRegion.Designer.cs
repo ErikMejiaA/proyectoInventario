@@ -2,6 +2,8 @@
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(proyectoInventarioContext))]
-    partial class proyectoInventarioContextModelSnapshot : ModelSnapshot
+    [Migration("20230709134458_PaisEstadoRegion")]
+    partial class PaisEstadoRegion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +26,8 @@ namespace Infrastructure.Data.Migrations
                 {
                     b.Property<string>("codEstado")
                         .HasMaxLength(3)
-                        .HasColumnType("varchar(3)");
+                        .HasColumnType("varchar(3)")
+                        .HasAnnotation("MySql : ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("codPais")
                         .IsRequired()
@@ -47,7 +52,8 @@ namespace Infrastructure.Data.Migrations
                 {
                     b.Property<string>("codPais")
                         .HasMaxLength(3)
-                        .HasColumnType("varchar(3)");
+                        .HasColumnType("varchar(3)")
+                        .HasAnnotation("MySql : ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("nombrePais")
                         .IsRequired()
@@ -66,7 +72,8 @@ namespace Infrastructure.Data.Migrations
                 {
                     b.Property<string>("codRegion")
                         .HasMaxLength(3)
-                        .HasColumnType("varchar(3)");
+                        .HasColumnType("varchar(3)")
+                        .HasAnnotation("MySql : ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("codEstado")
                         .IsRequired()

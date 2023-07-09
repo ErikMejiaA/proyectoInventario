@@ -13,7 +13,7 @@ public class PaisConfiguration : IEntityTypeConfiguration<Pais>
 
         builder.Property(p => p.codPais)
         .IsRequired()
-        .HasAnnotation("MySql : ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+        //.HasAnnotation("MySql : ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
         .HasMaxLength(3);
 
         builder.Property(p => p.nombrePais)
