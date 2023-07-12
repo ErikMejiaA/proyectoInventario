@@ -13,5 +13,8 @@ public class Region
     //Definimos una referencia a la entidad Estado
     public Estado ? Estado { get; set;}
 
+    //definimos una ICollection
+    public ICollection<Persona> ? Personas { get; set; }
+
         
 }

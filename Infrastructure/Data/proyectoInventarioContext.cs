@@ -14,7 +14,9 @@ public class proyectoInventarioContext : DbContext
     public DbSet<Region> ? Regiones { get; set; }
     public DbSet<Pais> ? Paises { get; set; }
     public DbSet<Estado> ? Estados { get; set; } 
-       
+    public DbSet<Persona> ? Personas { get; set; }
+    public DbSet<TipoPersona> ? TiposPersonas { get; set; }
+        
     //metodo para cargar de forma automatica las entidades y configuraciones de estas en la base de datos creada 
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)

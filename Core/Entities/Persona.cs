@@ -1,0 +1,23 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace Core.Entities;
+
+public class Persona
+{
+    //definimos los atributos de la entidad
+    [Key]
+    public string ? IdPersona { get; set; }
+    public string ? NombrePersona { get; set; }
+    public string ? ApellidoPersona { get; set; }
+    public string ? EmailPersona { get; set; }
+    public string ? CodRegion { get; set; }
+
+    //definimos la llave foranea
+    public int IdTipoPersona { get; set; }
+
+    //Definimos la referencia a la entidad
+    public TipoPersona ? TipoPersona { get; set; }
+    public Region ? Region { get; set; }
+
+        
+}
