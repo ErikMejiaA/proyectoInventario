@@ -13,7 +13,7 @@ public class RegionConfiguration : IEntityTypeConfiguration<Region>
 
         builder.Property(p => p.codRegion)
         .IsRequired()
-        //.HasAnnotation("MySql : ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+        .HasAnnotation("MySql : ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
         .HasMaxLength(3);
 
         builder.Property(p => p.nombreRegion)

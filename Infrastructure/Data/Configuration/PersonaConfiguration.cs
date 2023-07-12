@@ -13,12 +13,13 @@ public class PersonaConfiguration : IEntityTypeConfiguration<Persona>
         builder.ToTable("Personas");
 
         builder.Property(p => p.IdPersona)
-        .IsRequired()
-        .HasMaxLength(50);
+        .HasAnnotation("MySql : ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+        .IsRequired();
 
         builder.Property(p => p.NombrePersona)
         .IsRequired()
         .HasMaxLength(50);
+
         builder.Property(p => p.ApellidoPersona)
         .IsRequired()
         .HasMaxLength(50);

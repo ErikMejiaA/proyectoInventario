@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Core\\Core.csproj",
+      "projectUniqueName": "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Core\\Core.csproj",
+      "projectPath": "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Core\\obj\\",
+      "outputPath": "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -19,5 +19,8 @@ public class Persona
     public TipoPersona ? TipoPersona { get; set; }
     public Region ? Region { get; set; }
 
+    //deinimos una ICollection
+    public ICollection<ProductoPersona> ? ProductosPersonas { get; set; }
+
         
 }

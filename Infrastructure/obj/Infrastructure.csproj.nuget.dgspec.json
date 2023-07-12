@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Infrastructure\\Infrastructure.csproj": {}
+    "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Core\\Core.csproj": {
+    "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Core\\Core.csproj",
+        "projectPath": "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Core\\obj\\",
+        "outputPath": "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -57,14 +57,14 @@
         }
       }
     },
-    "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Infrastructure\\obj\\",
+        "outputPath": "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -79,8 +79,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Core\\Core.csproj"
+              "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Core\\Core.csproj": {
+                "projectPath": "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Core\\Core.csproj"
               }
             }
           }
@@ -97,7 +97,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.8, )"
+              "version": "[7.0.9, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",

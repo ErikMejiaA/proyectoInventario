@@ -13,7 +13,7 @@ public class EstadoConfiguration : IEntityTypeConfiguration<Estado>
 
         builder.Property(p => p.codEstado)
         .IsRequired()
-        //.HasAnnotation("MySql : ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+        .HasAnnotation("MySql : ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
         .HasMaxLength(3);
 
         builder.Property(p => p.nombreEstado)

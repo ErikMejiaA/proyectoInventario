@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cclWt4WRvBw/03Ia4XGRi0CEb82Kxn6rFkqRMGjIt1/fxLjODB+BoGtwIwrp13BEi29lgVqT4o06S8aFLrT7YQ==",
+  "dgSpecHash": "kUohEea9fBpwGbGG0b71Ba7jecTPuOeISmhEqQvRzHVK5XFdS7xA9agh8S+9v4zNghQzCP0WBlDF7NclKhj+ug==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\proyectoInventario\\Core\\Core.csproj",
+  "projectFilePath": "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Core\\Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
