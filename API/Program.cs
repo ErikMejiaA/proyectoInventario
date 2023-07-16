@@ -4,11 +4,11 @@ using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.ConfigureCors();  //servicio de los Cors 
-
+ 
 // Add services to the container.
-
 builder.Services.AddControllers();
+builder.Services.ConfigureCors();  //servicio de los Cors 
+builder.Services.AddAplicacionServices(); //definir las interfaces y repositorios
 
 //Confuguracion a la base de datos 
 builder.Services.AddDbContext<proyectoInventarioContext>(optionsBuilder =>
