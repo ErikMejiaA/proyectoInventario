@@ -47,5 +47,35 @@ public class EstadoController : BaseApiController
           }
           return CreatedAtAction(nameof(Post), new {id = estado.codEstado}, estado);
      }
+
+     //Metodo PUT permite editar un registro de la entidad 
+     [HttpPut("{id}")]
+     [ProducesResponseType(StatusCodes.Status200OK)]
+     [ProducesResponseType(StatusCodes.Status404NotFound)]
+     [ProducesResponseType(StatusCodes.Status400BadRequest)]
+     public async Task<ActionResult<Estado>> Put(string id, [FromBody]Estado estado)
+     {
+          if (estado == null) {
+               return NotFound();
+          }
+          _UnitOfWork.Estados.Update(estado);
+          await _UnitOfWork.SaveAsync();
+          return estado;
+     }
+
+     //Metodo DELETE permite eliminar un registro de la entidad 
+     [HttpDelete("{id}")]
+     [ProducesResponseType(StatusCodes.Status200OK)]
+     [ProducesResponseType(StatusCodes.Status404NotFound)]
+     public async Task<ActionResult> Delete(string id)
+     {
+          var estado = await _UnitOfWork.Estados.GetByIdAsycn(id);
+          if (estado == null) {
+               return NotFound();
+          }
+          _UnitOfWork.Estados.Remove(estado);
+          await _UnitOfWork.SaveAsync();
+          return NoContent();
+     }
         
 }
