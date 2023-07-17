@@ -36,7 +36,7 @@ public class TipoPersonaRepository : ITipoPersonaInterface
         return await _context.Set<TipoPersona>().ToListAsync();
     }
 
-    public async Task<TipoPersona>? GetByIdAsync(int id)
+    public async Task<TipoPersona> GetByIdAsync(int id)
     {
         return await _context.Set<TipoPersona>().FindAsync(id);
     }

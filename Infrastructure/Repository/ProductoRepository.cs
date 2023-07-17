@@ -38,7 +38,7 @@ public class ProductoRepository : IProductoInterface
         return await _context.Set<Producto>().ToListAsync();
     }
 
-    public async Task<Producto>? GetByIdAsync(string id)
+    public async Task<Producto> GetByIdAsync(string id)
     {
         return await _context.Set<Producto>().FindAsync(id);
     }

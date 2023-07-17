@@ -7,7 +7,7 @@ namespace Core.Interfaces;
 public interface IPersonaInterface
 {
     //implemetacion de los metodos 
-    Task<Persona> ? GetByYdAsync(string id);
+    Task<Persona> GetByYdAsync(string id);
     Task<IEnumerable<Persona>> GetAllAsync();
     IEnumerable<Persona> find(Expression<Func<Persona, bool>> expression);
     void Add(Persona entity);
@@ -15,5 +15,6 @@ public interface IPersonaInterface
     void Remove(Persona entity);
     void RemoveRange(IEnumerable<Persona> entities);
     void Update(Persona entity);
-        
+    Task GetByIdAsycn(string id);
+    Task<Persona> GetByIdAsync(string id);
 }

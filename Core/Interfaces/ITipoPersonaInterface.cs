@@ -5,7 +5,7 @@ namespace Core.Interfaces;
 public interface ITipoPersonaInterface
 {
     //implemtacion de los metodos 
-    Task<TipoPersona> ? GetByIdAsync(int id);
+    Task<TipoPersona> GetByIdAsync(int id);
     Task<IEnumerable<TipoPersona>> GetAllAsync();
     IEnumerable<TipoPersona> Find(Expression<Func<TipoPersona, bool>> expression);
     

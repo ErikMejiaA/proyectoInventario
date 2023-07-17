@@ -37,7 +37,7 @@ public class RegionRepository : IRegionInterface
         return await _context.Set<Region>().ToListAsync();
     }
 
-    public async Task<Region>? GetByIdAsync(string id)
+    public async Task<Region> GetByIdAsync(string id)
     {
         return await _context.Set<Region>().FindAsync(id);
     }

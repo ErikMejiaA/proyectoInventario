@@ -6,7 +6,7 @@ namespace Core.Interfaces;
 public interface IProductoInterface
 {
     //implementamos los metodos
-    Task<Producto> ? GetByIdAsync(string id);
+    Task<Producto> GetByIdAsync(string id);
     Task<IEnumerable<Producto>> GetAllAsync();
     IEnumerable<Producto> Find(Expression<Func<Producto, bool>> expression);
     void Add(Producto entity);

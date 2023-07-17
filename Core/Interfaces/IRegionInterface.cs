@@ -6,7 +6,7 @@ namespace Core.Interfaces;
 public interface IRegionInterface
 {
     //implementacion de los metodos 
-    Task<Region> ? GetByIdAsync(string id); 
+    Task<Region> GetByIdAsync(string id); 
     Task<IEnumerable<Region>> GetAllAsync();
     IEnumerable<Region> Find(Expression<Func<Region, bool>> expression);   
     void Add(Region entity);

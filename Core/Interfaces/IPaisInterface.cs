@@ -6,7 +6,7 @@ namespace Core.Interfaces;
 public interface IPaisInterface
 {
     //implementacion de los metodos 
-    Task<Pais> ? GetByIdAsync(string id);
+    Task<Pais> GetByIdAsync(string id);
     Task<IEnumerable<Pais>> GetAllAsync();
     IEnumerable<Pais> Find(Expression<Func<Pais, bool>> expression);
     void Add(Pais entity);
@@ -14,5 +14,6 @@ public interface IPaisInterface
     void Remove(Pais entity);
     void RemoveRange(IEnumerable<Pais> entities);
     void Update(Pais entity);
+    Task<Pais> GetByIdAsycn(string id);
 
 }

@@ -37,7 +37,17 @@ public class PersonaRepository : IPersonaInterface
         return await _context.Set<Persona>().ToListAsync();
     }
 
-    public async Task<Persona>? GetByYdAsync(string id)
+    public Task GetByIdAsycn(string id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Persona> GetByIdAsync(string id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<Persona> GetByYdAsync(string id)
     {
         return await _context.Set<Persona>().FindAsync(id);
     }

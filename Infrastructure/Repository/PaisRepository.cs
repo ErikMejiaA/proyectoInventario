@@ -37,7 +37,12 @@ public class PaisRepository : IPaisInterface
         return await _context.Set<Pais>().ToListAsync();
     }
 
-    public async Task<Pais>? GetByIdAsync(string id)
+    public Task<Pais> GetByIdAsycn(string id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<Pais> GetByIdAsync(string id)
     {
         return await _context.Set<Pais>().FindAsync(id);
     }

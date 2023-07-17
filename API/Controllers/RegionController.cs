@@ -50,4 +50,36 @@ public class RegionController : BaseApiController
         }
         return CreatedAtAction(nameof(Post), new {id = region.codRegion}, region);
     }
+
+    //Metodo PUT permite editar un registro de la entidad 
+    [HttpPut("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<Region>> Put(string id, [FromBody]Region region)
+    {
+        if (region == null) {
+            return NotFound();
+        }
+        _UnitOfWork.Regiones.Update(region);
+        await _UnitOfWork.SaveAsync();
+        return region;
+    }
+
+    //Metodo DELETE permite eliminar un registro de la entidad 
+    [HttpDelete("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<ActionResult> Delete(string id)
+    {
+        var region = await _UnitOfWork.Regiones.GetByIdAsync(id);
+        if (region == null)
+        {
+        return NotFound();
+        }
+        _UnitOfWork.Regiones.Remove(region);
+        await _UnitOfWork.SaveAsync();
+        return NoContent();
+    }
+
 }

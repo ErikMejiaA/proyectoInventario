@@ -50,5 +50,36 @@ public class ProductoController : BaseApiController
           return CreatedAtAction(nameof(Post), new {id = producto.IdProducto}, producto);
      }
 
+     //Metodo PUT permite editar un registro de la entidad 
+     [HttpPut("{id}")]
+     [ProducesResponseType(StatusCodes.Status200OK)]
+     [ProducesResponseType(StatusCodes.Status404NotFound)]
+     [ProducesResponseType(StatusCodes.Status400BadRequest)]
+     public async Task<ActionResult<Producto>> Put(string id, [FromBody]Producto producto)
+     {
+          if (producto == null) {
+          return NotFound();
+          }
+          _UnitOfWork.Productos.Update(producto);
+          await _UnitOfWork.SaveAsync();
+          return producto;
+     }
+
+     //Metodo DELETE permite eliminar un registro de la entidad 
+     [HttpDelete("{id}")]
+     [ProducesResponseType(StatusCodes.Status200OK)]
+     [ProducesResponseType(StatusCodes.Status404NotFound)]
+     public async Task<ActionResult> Delete(string id)
+     {
+          var producto = await _UnitOfWork.Productos.GetByIdAsync(id);
+          if (producto == null)
+          {
+          return NotFound();
+          }
+          _UnitOfWork.Productos.Remove(producto);
+          await _UnitOfWork.SaveAsync();
+          return NoContent();
+     }
+
         
 }

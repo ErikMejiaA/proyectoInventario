@@ -31,7 +31,7 @@ public class PaisController : BaseApiController
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
    public async Task<IActionResult> Get(string id)
    {
-      var pais = await _UnitOfWork.Paises.GetByIdAsync(id);
+      var pais = await _UnitOfWork.Paises.GetByIdAsycn(id);
       return Ok(pais);
    }
 
@@ -48,6 +48,37 @@ public class PaisController : BaseApiController
          return BadRequest();
       }
       return CreatedAtAction(nameof(Post), new {id = pais.codPais}, pais);
+   }
+
+   //Metodo PUT permite editar un registro de la entidad 
+   [HttpPut("{id}")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status404NotFound)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<ActionResult<Pais>> Put(string id, [FromBody]Pais pais)
+   {
+      if (pais == null) {
+         return NotFound();
+      }
+      _UnitOfWork.Paises.Update(pais);
+      await _UnitOfWork.SaveAsync();
+      return pais;
+   }
+
+   //Metodo DELETE permite eliminar un registro de la entidad 
+   [HttpDelete("{id}")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status404NotFound)]
+   public async Task<ActionResult> Delete(string id)
+   {
+      var pais = await _UnitOfWork.Paises.GetByIdAsycn(id);
+      if (pais == null)
+      {
+         return NotFound();
+      }
+      _UnitOfWork.Paises.Remove(pais);
+      await _UnitOfWork.SaveAsync();
+      return NoContent();
    }
 
 }
