@@ -14,6 +14,5 @@ public interface IPaisInterface
     void Remove(Pais entity);
     void RemoveRange(IEnumerable<Pais> entities);
     void Update(Pais entity);
-    Task<Pais> GetByIdAsycn(string id);
-
+    
 }

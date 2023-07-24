@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kUohEea9fBpwGbGG0b71Ba7jecTPuOeISmhEqQvRzHVK5XFdS7xA9agh8S+9v4zNghQzCP0WBlDF7NclKhj+ug==",
+  "dgSpecHash": "mlCSPdUlGjbPX+PzvK3VaPfHbUYfqC8dr6pEiHNht0310W8OfzQ4m5aDt0f8LlFN1ag45e+HVb6NFwCsBhoHxg==",
   "success": true,
-  "projectFilePath": "D:\\Campus Lat\\programasEntityFrameworkNETCore\\proyectoInventario\\Core\\Core.csproj",
+  "projectFilePath": "/home/apolm01-032/Desktop/proyectoInventario/Core/Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

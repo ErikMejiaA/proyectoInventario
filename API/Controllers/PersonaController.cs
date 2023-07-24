@@ -32,7 +32,7 @@ public class PersonaController : BaseApiController
      [ProducesResponseType(StatusCodes.Status400BadRequest)]
      public async Task<IActionResult> Get(string id)
      {
-          var persona = await _UnitOfWork.Personas.GetByYdAsync(id);
+          var persona = await _UnitOfWork.Personas.GetByIdAsync(id);
           return Ok(persona);
      }
 

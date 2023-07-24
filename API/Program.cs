@@ -1,4 +1,5 @@
 
+using System.Reflection;
 using API.Extensions;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
  
 // Add services to the container.
+builder.Services.AddAutoMapper(Assembly.GetEntryAssembly()); //Cargad de los servicios de autoMapper
 builder.Services.AddControllers();
 builder.Services.ConfigureCors();  //servicio de los Cors 
 builder.Services.AddAplicacionServices(); //definir las interfaces y repositorios

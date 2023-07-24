@@ -34,17 +34,18 @@ public class PaisRepository : IPaisInterface
 
     public async Task<IEnumerable<Pais>> GetAllAsync()
     {
-        return await _context.Set<Pais>().ToListAsync();
-    }
-
-    public Task<Pais> GetByIdAsycn(string id)
-    {
-        throw new NotImplementedException();
+        //return await _context.Set<Pais>().ToListAsync();
+        return await _context.Set<Pais>()
+        .Include(p => p.Estados) 
+        .ToListAsync();
+        
     }
 
     public async Task<Pais> GetByIdAsync(string id)
     {
-        return await _context.Set<Pais>().FindAsync(id);
+        return await _context.Paises
+        .Include(p => p.Estados)
+        .FirstOrDefaultAsync(p => p.codPais == id);
     }
 
     public void Remove(Pais entity)

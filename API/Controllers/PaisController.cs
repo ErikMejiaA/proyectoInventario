@@ -1,3 +1,5 @@
+using API.Dtos;
+using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
 using Infrastructure.Data;
@@ -9,30 +11,57 @@ namespace API.Controllers;
 public class PaisController : BaseApiController
 {
    private readonly IUnitOFWorkInterface _UnitOfWork;
+    private readonly IMapper mapper;
+    private object p;
 
-   public PaisController(IUnitOFWorkInterface UnitOfWork)
+    public PaisController(IUnitOFWorkInterface UnitOfWork, IMapper mapper)
    {
       _UnitOfWork = UnitOfWork;
-   }
+      this.mapper = mapper;
+    }
 
    //Metodo Get para lsiatr todo los paises de la base de datos
-   [HttpGet]
+   /*[HttpGet]
    [ProducesResponseType(StatusCodes.Status200OK)]
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
    public async Task<ActionResult<IEnumerable<Pais>>> Get()
    {
       var paises = await _UnitOfWork.Paises.GetAllAsync();
       return Ok(paises);
+   }*/
+   [HttpGet]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<List<PaisDto>> Get()
+   {
+      var paises = await _UnitOfWork.Paises.GetAllAsync();
+      return this.mapper.Map<List<PaisDto>>(paises);
    }
+
+   /*[HttpGet]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<List<PaisDto>> Get()
+   {
+      List<Pais> paisesFinal = new();
+      var paises = await _UnitOfWork.Paises.GetAllAsync();
+      foreach (Pais item in paises)
+      {
+         var p = await _UnitOfWork.Paises.GetByIdAsync(item.codPais);
+         paisesFinal.Add(p);
+      }
+      return this.mapper.Map<List<PaisDto>>(paisesFinal);
+      
+   }*/
 
    //Metodo Get para solo traer un unico registro de la base de datos
    [HttpGet("{id}")]
    [ProducesResponseType(StatusCodes.Status200OK)]
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-   public async Task<IActionResult> Get(string id)
+   public async Task<ActionResult<PaisDto>> Get(string id)
    {
-      var pais = await _UnitOfWork.Paises.GetByIdAsycn(id);
-      return Ok(pais);
+      var pais = await _UnitOfWork.Paises.GetByIdAsync(id);
+      return this.mapper.Map<PaisDto>(pais);
    }
 
    //Metodo POST para enviar datos a la entideda de la Db
@@ -71,7 +100,7 @@ public class PaisController : BaseApiController
    [ProducesResponseType(StatusCodes.Status404NotFound)]
    public async Task<ActionResult> Delete(string id)
    {
-      var pais = await _UnitOfWork.Paises.GetByIdAsycn(id);
+      var pais = await _UnitOfWork.Paises.GetByIdAsync(id);
       if (pais == null)
       {
          return NotFound();
