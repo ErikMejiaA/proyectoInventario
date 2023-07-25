@@ -37,7 +37,7 @@ public class EstadoRepository : IEstadoInterface
         return await _context.Set<Estado>().ToListAsync();
     }
 
-    public async Task<Estado> GetByIdAsycn(string id)
+    public async Task<Estado> GetByIdAsync(string id)
     {
         return await _context.Set<Estado>().FindAsync(id);
     }

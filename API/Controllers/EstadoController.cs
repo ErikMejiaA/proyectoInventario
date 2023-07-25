@@ -30,7 +30,7 @@ public class EstadoController : BaseApiController
      [ProducesResponseType(StatusCodes.Status400BadRequest)]
      public async Task<IActionResult> Get(string id)
      {
-          var estado = await _UnitOfWork.Estados.GetByIdAsycn(id);
+          var estado = await _UnitOfWork.Estados.GetByIdAsync(id);
           return Ok(estado);
      }
 
